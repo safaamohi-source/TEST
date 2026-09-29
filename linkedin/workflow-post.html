@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root {
+    --bg: #0e1016;
+    --card: #161a23;
+    --line: #262b38;
+    --text: #f3f4f8;
+    --muted: #a3a9b8;
+    --accent: #ff5a7a;
+    --accent2: #7c6cff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1350px; overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "IBM Plex Sans Arabic", sans-serif;
+    position: relative;
+  }
+  .glow {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% -5%, rgba(255,90,122,.20), transparent 70%),
+      radial-gradient(600px 500px at -10% 100%, rgba(124,108,255,.18), transparent 70%);
+  }
+  .wrap { position: relative; padding: 46px 64px 0; }
+  .ar { font-family: "IBM Plex Sans Arabic", sans-serif; direction: rtl; text-align: right; }
+
+  .chips { display: flex; gap: 10px; }
+  .chip {
+    font-size: 17px; font-weight: 500; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px;
+    background: rgba(255,255,255,.02);
+  }
+  .chip b { color: var(--accent); font-weight: 700; }
+
+  .head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 22px; }
+  h1 { font-size: 40px; line-height: 1.12; font-weight: 800; letter-spacing: -0.02em; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; color: transparent; }
+  .head .ar h1 { font-size: 35px; line-height: 1.35; font-weight: 700; letter-spacing: 0; }
+  .sub { margin-top: 10px; font-size: 19px; line-height: 1.4; color: var(--muted); }
+  .head .ar .sub { font-size: 19px; line-height: 1.6; }
+
+  .steps { position: relative; margin-top: 26px; }
+  .rail {
+    position: absolute; left: 25px; top: 40px; bottom: 90px; width: 2px;
+    background: linear-gradient(var(--accent), var(--accent2));
+    opacity: .6;
+  }
+  .step { position: relative; display: flex; gap: 22px; align-items: stretch; margin-bottom: 15px; }
+  .num {
+    flex: none; width: 52px; height: 52px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 18px; font-weight: 800; color: #fff;
+    background: var(--bg); border: 2px solid var(--c);
+    box-shadow: 0 0 0 5px var(--bg);
+    margin-top: 21px; position: relative; z-index: 1;
+  }
+  .card {
+    flex: 1; background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 16px 22px;
+    display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px;
+    border-left: 3px solid var(--c);
+  }
+  .card h3 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
+  .card .ar h3 { font-size: 21px; }
+  .card p { font-size: 16px; line-height: 1.42; color: var(--muted); }
+  .card .ar p { font-size: 16.5px; line-height: 1.5; }
+  .card .en { padding-right: 14px; border-right: 1px dashed var(--line); }
+
+  .foot {
+    position: absolute; left: 64px; right: 64px; bottom: 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .stack { display: flex; gap: 8px; flex-wrap: wrap; }
+  .stack span {
+    font-size: 15px; font-weight: 500; color: var(--text);
+    background: #1d2230; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px;
+  }
+  .tag { font-size: 15px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="chips">
+    <span class="chip"><b>n8n</b> Workflow</span>
+    <span class="chip">AI Automation</span>
+    <span class="chip">Meta Graph API</span>
+  </div>
+
+  <div class="head">
+    <div>
+      <h1>An <em>AI sales assistant</em> for Messenger &amp; Instagram DMs</h1>
+      <p class="sub">Replies like a human, and knows when to step aside for your team.</p>
+    </div>
+    <div class="ar">
+      <h1>مساعد مبيعات <em>بالذكاء الاصطناعي</em> لرسائل ماسنجر وإنستجرام</h1>
+      <p class="sub">يرد كأنه إنسان، ويعرف متى يترك المحادثة لفريقك.</p>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="rail"></div>
+
+    <div class="step" style="--c:#ff5a7a">
+      <div class="num">01</div>
+      <div class="card">
+        <div class="en"><h3>Secure intake</h3><p>Verifies every Meta webhook signature (HMAC-SHA256) and drops duplicate messages.</p></div>
+        <div class="ar"><h3>استقبال آمن</h3><p>يتحقق من توقيع كل رسالة قادمة من Meta ويتجاهل الرسائل المكررة.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#f6667f">
+      <div class="num">02</div>
+      <div class="card">
+        <div class="en"><h3>Customer memory</h3><p>Every customer and message is stored in PostgreSQL; images are archived to Google Drive.</p></div>
+        <div class="ar"><h3>ذاكرة لكل عميل</h3><p>كل عميل وكل رسالة محفوظة في قاعدة البيانات، والصور تُرفع على Google Drive.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#e0718c">
+      <div class="num">03</div>
+      <div class="card">
+        <div class="en"><h3>Human takeover</h3><p>The team types a keyword in the chat to pause the bot, and another to resume it.</p></div>
+        <div class="ar"><h3>تحكم بشري</h3><p>يكتب الفريق «توقف» فيتوقف البوت، و«استكمل» فيعود للرد.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#c77a9e">
+      <div class="num">04</div>
+      <div class="card">
+        <div class="en"><h3>Message batching</h3><p>Waits for the customer to finish typing, then answers all their messages in one reply.</p></div>
+        <div class="ar"><h3>تجميع الرسائل</h3><p>ينتظر حتى ينتهي العميل من الكتابة، ثم يرد على كل رسائله في رد واحد.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#a877c2">
+      <div class="num">05</div>
+      <div class="card">
+        <div class="en"><h3>Context-aware AI</h3><p>Reads the recent conversation and photos, and knows when a new day's chat begins.</p></div>
+        <div class="ar"><h3>ذكاء يفهم السياق</h3><p>يقرأ آخر المحادثة والصور، ويفرّق بين محادثة اليوم ومحادثة الأمس.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#9072e6">
+      <div class="num">06</div>
+      <div class="card">
+        <div class="en"><h3>Safe replies</h3><p>Confirms no newer message arrived before sending, with a fallback reply if the AI fails.</p></div>
+        <div class="ar"><h3>رد في الوقت الصحيح</h3><p>يتأكد من عدم وصول رسالة أحدث قبل الإرسال، ولديه رد احتياطي إذا تعطّل الذكاء الاصطناعي.</p></div>
+      </div>
+    </div>
+
+    <div class="step" style="--c:#7c6cff">
+      <div class="num">07</div>
+      <div class="card">
+        <div class="en"><h3>Lead capture &amp; handoff</h3><p>Extracts name, phone, area, product and size, and flags when sales should step in.</p></div>
+        <div class="ar"><h3>بيانات العميل والتحويل للمبيعات</h3><p>يستخرج الاسم والهاتف والمنطقة والمنتج والمقاس، وينبّه عندما يلزم تدخل المبيعات.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <div class="stack">
+    <span>n8n</span><span>PostgreSQL</span><span>Meta Graph API</span><span>Google Drive</span><span>AI Agent</span>
+  </div>
+  <div class="tag">Built with n8n</div>
+</div>
+</body>
+</html>
