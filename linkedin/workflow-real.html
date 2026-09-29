@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/fonts.css"><style>
+:root{--bg:#0e1016;--card:#161a23;--line:#262b38;--text:#f3f4f8;--muted:#a3a9b8;--accent:#ff5a7a;--accent2:#7c6cff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1350px;overflow:hidden;background:var(--bg);color:var(--text);font-family:"Inter","IBM Plex Sans Arabic",sans-serif;position:relative}
+.glow{position:absolute;inset:0;background:radial-gradient(600px 400px at 90% -5%,rgba(255,90,122,.20),transparent 70%),radial-gradient(600px 500px at -10% 100%,rgba(124,108,255,.18),transparent 70%)}
+.wrap{position:relative;padding:46px 40px 0}
+.inner{padding:0 24px}
+.ar{font-family:"IBM Plex Sans Arabic",sans-serif;direction:rtl;text-align:right}
+.chips{display:flex;gap:10px}
+.chip{font-size:17px;font-weight:500;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 16px;background:rgba(255,255,255,.02)}
+.chip b{color:var(--accent);font-weight:700}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px}
+h1{font-size:40px;line-height:1.12;font-weight:800;letter-spacing:-.02em}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}
+.head .ar h1{font-size:35px;line-height:1.35;font-weight:700;letter-spacing:0}
+.sub{margin-top:10px;font-size:19px;line-height:1.4;color:var(--muted)}
+.head .ar .sub{line-height:1.6}
+.win{margin-top:36px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#1a1a1a;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.bar{height:38px;display:flex;align-items:center;gap:8px;padding:0 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.dot{width:11px;height:11px;border-radius:50%}
+.bar .t{margin-left:auto;font-size:14px;color:var(--muted)}
+.shot{position:relative}
+.shot img{display:block;width:100%}
+.mk{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-size:12.5px;font-weight:800;display:grid;place-items:center;box-shadow:0 0 0 3px rgba(14,16,22,.85),0 4px 14px rgba(0,0,0,.5)}
+.legend{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.li{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--c);border-radius:12px;padding:16px 18px}
+.li .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-size:12.5px;font-weight:800}
+.li .en{font-size:17px;font-weight:600}
+.li .ar{margin-left:auto;font-size:17px;font-weight:600;color:var(--muted)}
+.li:last-child{grid-column:1/-1}
+.stats{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}.st b{grid-row:span 2;font-size:40px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}.st .en{font-size:16px;font-weight:600}.st .ar{font-size:16px;color:var(--muted);text-align:left;direction:rtl;justify-self:start}
+.foot{position:absolute;left:64px;right:64px;bottom:40px;display:flex;justify-content:space-between;align-items:center}
+.stack{display:flex;gap:8px}
+.stack span{font-size:15px;font-weight:500;background:#1d2230;border:1px solid var(--line);border-radius:8px;padding:6px 12px}
+.tag{font-size:15px;color:var(--muted)}
+</style></head><body><div class="glow"></div><div class="wrap">
+<div class="inner">
+<div class="chips"><span class="chip"><b>n8n</b> Workflow</span><span class="chip">Behind the scenes</span><span class="chip ar">من الداخل</span></div>
+<div class="head"><div><h1>The <em>real workflow</em> behind the assistant</h1><p class="sub">Every numbered step maps to a part of the live n8n canvas.</p></div>
+<div class="ar"><h1><em>الورك فلو الحقيقي</em> خلف المساعد</h1><p class="sub">كل رقم يشير إلى جزء من الورك فلو الفعلي على n8n.</p></div></div>
+</div>
+<div class="win"><div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="t">Meta — Webhook · n8n</span></div>
+<div class="shot"><img src="wf_blur_t.png">
+<div class="mk" style="left:14.35%;top:11.53%;--c:#ff5a7a">01</div>
+<div class="mk" style="left:61.30%;top:19.15%;--c:#f6667f">02</div>
+<div class="mk" style="left:53.48%;top:3.39%;--c:#e0718c">03</div>
+<div class="mk" style="left:84.78%;top:27.12%;--c:#c77a9e">04</div>
+<div class="mk" style="left:66.81%;top:75.59%;--c:#a877c2">05</div>
+<div class="mk" style="left:59.13%;top:75.59%;--c:#9072e6">06</div>
+<div class="mk" style="left:43.48%;top:83.56%;--c:#7c6cff">07</div>
+</div></div>
+<div class="stats">
+<div class="st"><b>39</b><span class="en">nodes</span><span class="ar">عقدة</span></div>
+<div class="st"><b>11</b><span class="en">decision points</span><span class="ar">نقطة قرار</span></div>
+<div class="st"><b>11</b><span class="en">database steps</span><span class="ar">عملية على قاعدة البيانات</span></div>
+</div>
+<div class="legend inner" style="padding:0">
+<div class="li" style="--c:#ff5a7a"><span class="n">01</span><span class="en">Secure intake</span><span class="ar">استقبال آمن</span></div>
+<div class="li" style="--c:#f6667f"><span class="n">02</span><span class="en">Customer memory</span><span class="ar">ذاكرة لكل عميل</span></div>
+<div class="li" style="--c:#e0718c"><span class="n">03</span><span class="en">Human takeover</span><span class="ar">تحكم بشري</span></div>
+<div class="li" style="--c:#c77a9e"><span class="n">04</span><span class="en">Message batching</span><span class="ar">تجميع الرسائل</span></div>
+<div class="li" style="--c:#a877c2"><span class="n">05</span><span class="en">Context-aware AI</span><span class="ar">ذكاء يفهم السياق</span></div>
+<div class="li" style="--c:#9072e6"><span class="n">06</span><span class="en">Safe replies</span><span class="ar">رد في الوقت الصحيح</span></div>
+<div class="li" style="--c:#7c6cff"><span class="n">07</span><span class="en">Lead capture &amp; handoff</span><span class="ar">بيانات العميل والتحويل للمبيعات</span></div>
+</div></div>
+<div class="foot"><div class="stack"><span>n8n</span><span>PostgreSQL</span><span>Meta Graph API</span><span>Google Drive</span><span>AI Agent</span></div><div class="tag">Built with n8n</div></div>
+</body></html>
