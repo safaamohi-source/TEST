@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Safaa Mohi: AI Automation Specialist building n8n workflows and AI agents for businesses. Open to remote roles.">
+<title>Safaa Mohi Automation Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: one reading column; the case study breaks wider with a node-chain pipeline and a screenshot gallery */
+  :root {
+    --bg: #0f1117;
+    --surface: #171a23;
+    --surface-2: #1d2130;
+    --line: #2a2f3e;
+    --fg: #eef0f5;
+    --muted: #9aa1b2;
+    --accent: #ff5a7a;
+    --accent-2: #8b7bff;
+    --ok: #3ecf8e;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f5f8; --surface: #ffffff; --surface-2: #f0eef5; --line: #e2dfea;
+      --fg: #16181f; --muted: #5b6070; --accent: #d6365b; --accent-2: #5f4fd6; --ok: #1f9d68;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f5f8; --surface: #ffffff; --surface-2: #f0eef5; --line: #e2dfea;
+    --fg: #16181f; --muted: #5b6070; --accent: #d6365b; --accent-2: #5f4fd6; --ok: #1f9d68;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 1040px; margin-inline: auto; display: grid; gap: 88px; }
+  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  .mono { font-family: var(--mono); }
+  .eyebrow {
+    font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .grad {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* Hero */
+  .hero { padding-top: 72px; display: grid; gap: 22px; max-width: 760px; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; }
+  .hero .role { font-family: var(--display); font-weight: 600; font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.3; }
+  .hero .lede { color: var(--muted); font-size: 1.1rem; max-width: 60ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.9rem; font-weight: 500; color: var(--fg);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 20%, transparent); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 600 0.95rem var(--body); text-decoration: none; cursor: pointer;
+    padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--fg);
+  }
+  .btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .btn:hover { border-color: var(--accent); }
+  .btn:focus-visible, a:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+
+  section { display: grid; gap: 28px; }
+  .section-head { display: grid; gap: 8px; }
+  .section-head h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; }
+
+  /* What I build */
+  .build { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .build > div { background: var(--surface); padding: 24px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .build h3 { font-size: 1.15rem; font-weight: 600; }
+  .build p { color: var(--muted); }
+
+  /* Case study */
+  .case { display: grid; gap: 32px; }
+  .case-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+  .case-intro p { color: var(--muted); }
+  .case-intro .problem { display: grid; gap: 14px; }
+  .facts { display: grid; gap: 10px; margin: 0; }
+  .facts div { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px dashed var(--line); padding-bottom: 10px; }
+  .facts dt { color: var(--muted); font-size: 0.9rem; }
+  .facts dd { margin: 0; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+
+  .pipeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+  .pipeline li {
+    counter-increment: step;
+    display: grid; grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; align-items: start;
+    padding: 18px 0; border-top: 1px solid var(--line);
+  }
+  .pipeline li:last-child { border-bottom: 1px solid var(--line); }
+  .pipeline li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--mono); font-weight: 500; font-size: 0.9rem; color: var(--accent);
+    padding-top: 3px;
+  }
+  .pipeline h3 { font-size: 1.1rem; font-weight: 600; }
+  .node {
+    display: inline-block; margin-top: 6px;
+    font-family: var(--mono); font-size: 0.78rem; color: var(--muted);
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px;
+  }
+  .pipeline p { color: var(--muted); }
+
+  .gallery { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
+  .shot { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #1a1a1a; }
+  .shot img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 0.9rem; color: var(--muted); }
+  figcaption b { color: var(--fg); font-weight: 600; }
+  .note { font-size: 0.85rem; color: var(--muted); }
+
+  /* Principles + tools */
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+  .principles { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .principles li { display: grid; gap: 4px; padding-left: 16px; border-left: 2px solid var(--accent-2); }
+  .principles b { font-weight: 600; }
+  .principles span { color: var(--muted); }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tools span { font-family: var(--mono); font-size: 0.85rem; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; background: var(--surface); }
+  .bg-text { color: var(--muted); max-width: 60ch; }
+
+  /* Contact */
+  .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 36px; display: grid; gap: 18px; }
+  .contact h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); font-weight: 800; }
+  .email { font-family: var(--mono); font-size: 1.05rem; user-select: all; word-break: break-all; }
+  .toast { font-size: 0.85rem; color: var(--ok); min-height: 1.2em; }
+
+  footer { color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 760px) {
+    .build, .case-intro, .gallery, .split { grid-template-columns: minmax(0, 1fr); }
+    .pipeline li { grid-template-columns: 40px minmax(0, 1fr); }
+    .pipeline li p { grid-column: 2; }
+    .contact { padding: 24px; }
+    .wrap { gap: 64px; }
+    .hero { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn { transition: border-color .15s ease; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">n8n · AI Agents · Workflow Automation</span>
+    <h1>Safaa Mohi</h1>
+    <p class="role"><span class="grad">AI Automation Specialist</span> building smart n8n workflows for businesses</p>
+    <p class="lede">I build workflows that take repetitive work off a team's plate: they connect the tools a business already uses, move data automatically, and use AI agents to understand requests and decide what happens next, with a person kept in control.</p>
+    <div class="actions">
+      <span class="status">Open to remote roles</span>
+      <a class="btn primary" href="https://www.linkedin.com/in/safaamohi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <section aria-labelledby="build-h">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2 id="build-h">What I build</h2>
+    </div>
+    <div class="build">
+      <div><h3>Workflow automation in n8n</h3><p>End-to-end workflows that connect apps, APIs and databases, so data moves without copy-paste.</p></div>
+      <div><h3>AI agents</h3><p>Agents that read messages, understand context, and respond or route the work to the right person.</p></div>
+      <div><h3>AI customer assistants</h3><p>Chat assistants with conversation memory that know when to answer and when to hand over to your team.</p></div>
+      <div><h3>Automated data handling</h3><p>Saving records, organizing files and keeping systems updated as part of the same flow.</p></div>
+    </div>
+  </section>
+
+  <section class="case" aria-labelledby="case-h">
+    <div class="section-head">
+      <span class="eyebrow">Case study</span>
+      <h2 id="case-h">AI sales assistant for Instagram &amp; Messenger DMs</h2>
+    </div>
+
+    <div class="case-intro">
+      <div class="problem">
+        <p><b style="color:var(--fg)">The challenge.</b> Customers message in bursts, send product photos, and expect quick answers, while serious leads still need a salesperson.</p>
+        <p><b style="color:var(--fg)">The solution.</b> Two n8n workflows, one per platform, that receive every message securely, remember each customer, wait until the customer finishes typing, reply with an AI agent, and hand the conversation to a salesperson when needed.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Platform</dt><dd>n8n</dd></div>
+        <div><dt>Nodes per workflow</dt><dd>39</dd></div>
+        <div><dt>Database</dt><dd>PostgreSQL</dd></div>
+        <div><dt>Channels</dt><dd>Instagram, Messenger</dd></div>
+        <div><dt>File storage</dt><dd>Google Drive</dd></div>
+      </dl>
+    </div>
+
+    <ol class="pipeline">
+      <li><div><h3>Secure intake</h3><span class="node">Verify Instagram Signature</span></div><p>Completes Meta's webhook handshake, checks the signature on every incoming message, and blocks duplicates.</p></li>
+      <li><div><h3>Customer memory</h3><span class="node">Save Incoming Message</span></div><p>Stores every customer and message, fetches Instagram profile names, and archives photos to Google Drive.</p></li>
+      <li><div><h3>Human takeover</h3><span class="node">Toggle Bot Pause</span></div><p>The team types one keyword in the chat to pause the bot, and another to resume it.</p></li>
+      <li><div><h3>Message batching</h3><span class="node">Wait For Burst</span></div><p>Waits for the customer to finish, then answers all of their messages in one reply.</p></li>
+      <li><div><h3>Context-aware AI</h3><span class="node">Run AI Core</span></div><p>Sends recent history and photos to the AI agent, and marks where a new day's conversation starts.</p></li>
+      <li><div><h3>Safe replies</h3><span class="node">Confirm Still Latest</span></div><p>Checks that no newer message arrived before sending, replies from the right account, and falls back to a default reply if the AI fails.</p></li>
+      <li><div><h3>Lead capture &amp; handoff</h3><span class="node">Update Customer From AI</span></div><p>Saves the name, phone, area, product and size the AI extracted, and flags conversations a salesperson should take over.</p></li>
+    </ol>
+
+    <div class="gallery">
+      <figure>
+        <div class="shot"><img src="img/messenger-workflow.png" alt="n8n canvas of the Messenger workflow with 39 connected nodes" width="1380" height="590"></div>
+        <figcaption><b>Messenger workflow.</b> 39 nodes, 11 decision points, 11 database steps.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot"><img src="img/instagram-workflow.png" alt="n8n canvas of the Instagram workflow with 39 connected nodes" width="912" height="786"></div>
+        <figcaption><b>Instagram workflow.</b> 39 nodes, 10 decision points, 13 database steps.</figcaption>
+      </figure>
+    </div>
+    <p class="note">Account names in the screenshots are blurred.</p>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <div class="split">
+      <div style="display:grid;gap:24px;align-content:start">
+        <div class="section-head">
+          <span class="eyebrow">Approach</span>
+          <h2 id="how-h">How I build</h2>
+        </div>
+        <ul class="principles">
+          <li><b>Reliable</b><span>Duplicate protection, validation checks, error handling and fallback paths.</span></li>
+          <li><b>Secure</b><span>Verified webhooks, with secrets stored outside the workflow.</span></li>
+          <li><b>Human in control</b><span>Clear points where a person can step in, pause or take over.</span></li>
+          <li><b>Practical</b><span>AI only where it adds real value to the process.</span></li>
+        </ul>
+      </div>
+      <div style="display:grid;gap:24px;align-content:start">
+        <div class="section-head">
+          <span class="eyebrow">Toolkit</span>
+          <h2>Tools</h2>
+        </div>
+        <div class="tools"><span>n8n</span><span>AI Agents</span><span>Webhooks</span><span>REST APIs</span><span>PostgreSQL</span><span>Google Drive</span><span>Meta Graph API</span></div>
+        <div class="section-head" style="margin-top:12px">
+          <span class="eyebrow">Background</span>
+        </div>
+        <p class="bg-text">Computer Science, Cairo University. Over 10 years working remotely with agencies, studios and international clients as a senior graphic designer, so remote collaboration and clear communication are part of how I work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <span class="eyebrow">Contact</span>
+    <h2 id="contact-h">Have a process that should run itself?</h2>
+    <p class="bg-text">I'm open to remote roles in workflow automation and AI automation with n8n.</p>
+    <div class="actions">
+      <span class="email" id="email">safaamohi@gmail.com</span>
+      <button class="btn" type="button" id="copy">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/safaamohi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.behance.net/SafaaMohi" target="_blank" rel="noopener">Design portfolio</a>
+    </div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </section>
+
+  <footer>Safaa Mohi · Cairo, Egypt · Working remotely</footer>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy');
+    var email = document.getElementById('email');
+    var toast = document.getElementById('toast');
+    function selectEmail() {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+    btn.addEventListener('click', function () {
+      var text = email.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          toast.textContent = 'Email copied';
+        }).catch(function () {
+          selectEmail(); toast.textContent = 'Email selected. Press Ctrl+C or Cmd+C to copy.';
+        });
+      } else {
+        selectEmail(); toast.textContent = 'Email selected. Press Ctrl+C or Cmd+C to copy.';
+      }
+    });
+  })();
+</script>
+</body>
+</html>
