@@ -1,5 +1,5 @@
 import html, pathlib
-F = "/tmp/claude-0/-home-user-TEST/01d6f5f3-9714-5146-8f14-ab6d70451b3e/scratchpad/fonts/"
+F = "/tmp/claude-0/-home-user-TEST/01d6f5f3-9714-5146-8f14-ab6d70451b3e/scratchpad/f3/"
 main = [
 ("أفرش بيتك",[
 "أيوه عندنا باقات أفرش بيتك وعليها عروض وأسعار خاصة 😊 تقدر تشوف التفاصيل على الموقع، وقولي ناوي تجهز إيه.",
@@ -110,22 +110,22 @@ body+='<div class="break"></div><h1 class="part">قسم الرد على العم
 for n,t,l in sub:
     body+=f'<section><h3><span class="num">{n}</span>{e(t)}</h3>{items(l)}</section>'
 css=f"""
-@font-face{{font-family:Cairo;font-weight:400;src:url(file://{F}SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hOA-W1Q.ttf)}}
-@font-face{{font-family:Cairo;font-weight:600;src:url(file://{F}SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hD45W1Q.ttf)}}
-@font-face{{font-family:Cairo;font-weight:800;src:url(file://{F}SLXgc1nY6HkvangtZmpQdkhzfH5lkSs2SgRjCAGMQ1z0hGA5W1Q.ttf)}}
+@font-face{{font-family:Plex;font-weight:400;src:url(file://{F}r.ttf)}}
+@font-face{{font-family:Plex;font-weight:600;src:url(file://{F}s.ttf)}}
+@font-face{{font-family:Plex;font-weight:700;src:url(file://{F}b.ttf)}}
 @page{{size:A4;margin:16mm 14mm}}
 *{{box-sizing:border-box}}
-body{{font-family:Cairo,'Noto Color Emoji',sans-serif;font-size:15pt;line-height:1.9;color:#111;margin:0}}
+body{{font-family:Plex,'Noto Color Emoji',sans-serif;font-size:15pt;line-height:1.9;color:#111;margin:0}}
 header{{border-bottom:4px solid #e8590c;padding-bottom:8px;margin-bottom:18px}}
-h1.title{{font-size:26pt;font-weight:800;color:#e8590c;margin:0}}
+h1.title{{font-size:26pt;font-weight:700;color:#e8590c;margin:0}}
 .sub{{font-size:14pt;font-weight:600;color:#333;margin:4px 0 0}}
 section{{margin-bottom:22px;break-inside:auto}}
-h2{{font-size:20pt;font-weight:800;color:#fff;background:#e8590c;padding:4px 16px;border-radius:8px;margin:0 0 12px;break-after:avoid}}
-h1.part{{font-size:22pt;font-weight:800;color:#fff;background:#1f2937;padding:6px 16px;border-radius:8px;margin:0 0 18px}}
-h3{{font-size:18pt;font-weight:800;color:#b34100;border-bottom:3px solid #e8590c;padding-bottom:2px;margin:0 0 12px;break-after:avoid}}
+h2{{font-size:20pt;font-weight:700;color:#fff;background:#e8590c;padding:4px 16px;border-radius:8px;margin:0 0 12px;break-after:avoid}}
+h1.part{{font-size:22pt;font-weight:700;color:#fff;background:#1f2937;padding:6px 16px;border-radius:8px;margin:0 0 18px}}
+h3{{font-size:18pt;font-weight:700;color:#b34100;border-bottom:3px solid #e8590c;padding-bottom:2px;margin:0 0 12px;break-after:avoid}}
 .num{{display:inline-block;background:#e8590c;color:#fff;border-radius:50%;min-width:34px;height:34px;line-height:34px;text-align:center;font-size:14pt;margin-left:10px}}
 .item{{font-weight:600;background:#f6f6f6;border-right:5px solid #e8590c;border-radius:6px;padding:7px 14px;margin-bottom:12px;break-inside:avoid}}
-.lbl{{color:#b34100;font-weight:800}}
+.lbl{{color:#b34100;font-weight:700}}
 .break{{break-after:page}}
 """
 doc=f'<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>{css}</style></head><body><header><h1 class="title">مكتبة ردود جاهزة للرسائل - Mega Furniture</h1><p class="sub">ردود قصيرة وطبيعية للكوبي بيست أثناء الرد على العملاء.</p></header>{body}</body></html>'
