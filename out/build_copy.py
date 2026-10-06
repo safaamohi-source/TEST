@@ -3,6 +3,7 @@ spec=importlib.util.spec_from_file_location("b","build.py"); b=importlib.util.mo
 e=html.escape
 secs=[("m%d"%i,t,l,None) for i,(t,l) in enumerate(b.main)]+[("s"+n,t,l,n) for n,t,l in b.sub]
 def row(x):
+    if isinstance(x,list): return '<li><span class="r">'+'<br>'.join(e(y) for y in x)+'</span><button type="button" data-t="'+e("\n".join(x))+'">نسخ</button></li>'
     if isinstance(x,tuple): lab,txt=x; return f'<li><span class="r"><b>{e(lab)}:</b> {e(txt)}</span><button type="button" data-t="{e(txt)}">نسخ</button></li>'
     return f'<li><span class="r">{e(x)}</span><button type="button" data-t="{e(x)}">نسخ</button></li>'
 nav="".join(f'<a href="#{i}">{(n+") " if n else "")}{e(t)}</a>' for i,t,l,n in secs)
@@ -55,5 +56,5 @@ document.getElementById('q').addEventListener('input',function(e){{
 }});
 </script>'''
 open("copy_page.html","w",encoding="utf-8").write(page)
-txt="\n\n".join(f"## {t}\n\n"+"\n\n".join((x[0]+": "+x[1]) if isinstance(x,tuple) else x for x in l) for i,t,l,n in secs)
+txt="\n\n".join(f"## {t}\n\n"+"\n\n".join(("\n".join(x) if isinstance(x,list) else ((x[0]+": "+x[1]) if isinstance(x,tuple) else x)) for x in l) for i,t,l,n in secs)
 open("Mega_Furniture_Replies.txt","w",encoding="utf-8").write(txt+"\n")
